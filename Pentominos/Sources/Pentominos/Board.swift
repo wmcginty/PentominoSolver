@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 extension [[Board.Element]] {
 
@@ -21,12 +22,12 @@ extension [[Board.Element]] {
     }
 }
 
-struct Board: Hashable, CustomStringConvertible {
+public struct Board: Hashable, CustomStringConvertible {
 
     // MARK: - Board.Element
-    enum Element: Hashable, CustomStringConvertible {
+    public enum Element: Hashable, CustomStringConvertible, View {
         case empty
-        case piece(identifier: Character)
+        case piece(identifier: Character, color: Color)
 
         var isFull: Bool {
             switch self {
@@ -36,49 +37,71 @@ struct Board: Hashable, CustomStringConvertible {
         }
 
         // MARK: - CustomStringConvertible
-        var description: String {
+        public var description: String {
             switch self {
             case .empty: return "⬜"
-            case .piece(let identifier): return String(identifier)
+            case .piece(let identifier, _): return String(identifier)
             }
+        }
+        
+        @ViewBuilder
+        public var body: some View {
+                switch self {
+                case .empty:
+                    if #available(iOS 17.0, *) {
+                        Rectangle()
+                            .fill(.background.secondary)
+                            .border(.black)
+                    } else {
+                        Color.gray
+                            .border(.black)
+                    }
+                case .piece(_, let color):
+                    color
+                        .border(.black)
+                }
         }
     }
 
     // MARK: - Properties
     private(set) var elements: [[Element]]
     let allCoordinates: Set<Coordinate>
+    public let width: Int
+    public let height: Int
 
     // MARK: - Initializer
-    init(width: Int, height: Int) {
+    public init(width: Int, height: Int) {
+        self.width = width
+        self.height = height
         self.elements = Array(repeating: Array(repeating: Element.empty, count: width), count: height)
         self.allCoordinates = elements.allCoordinates
     }
 
     // MARK: - Interface
-    var emptyCoordinates: Set<Coordinate> {
+    public var emptyCoordinates: Set<Coordinate> {
         return allCoordinates.filter { element(at: $0) == .empty }
     }
 
-    var hasIslandSquare: Bool {
+    public var hasIslandSquare: Bool {
         return emptyCoordinates.contains {
             let cardinalNeighbots = $0.neighbors(in: [.north, .east, .south, .west])
             return cardinalNeighbots.allSatisfy { !isValid(coordinate: $0) || element(at: $0).isFull }
         }
     }
 
-    func isValid(coordinate: Coordinate) -> Bool {
+    public func isValid(coordinate: Coordinate) -> Bool {
         return coordinate.row >= 0 && coordinate.row < elements.count && coordinate.col >= 0 && coordinate.col < elements[0].count
     }
 
-    func element(at coordinate: Coordinate) -> Element {
+    public func element(at coordinate: Coordinate) -> Element {
         return elements[coordinate.row][coordinate.col]
     }
 
-    mutating func set(_ element: Element, at coordinate: Coordinate) {
+    public mutating func set(_ element: Element, at coordinate: Coordinate) {
         elements[coordinate.row][coordinate.col] = element
     }
 
-    func possibleCoordinates(for piece: Piece) -> [Coordinate] {
+    public func possibleCoordinates(for piece: Piece) -> [Coordinate] {
         guard piece.hasContentAtOrigin else {
             return allCoordinates.filter {
                 let pieceCoordinates = piece.allCoordinates(fromTopLeft: $0)
@@ -92,15 +115,15 @@ struct Board: Hashable, CustomStringConvertible {
         }
     }
 
-    mutating func place(piece: Piece, at coordinate: Coordinate) {
+    public mutating func place(piece: Piece, at coordinate: Coordinate) {
         let allCoordinates = piece.allCoordinates(fromTopLeft: coordinate)
         allCoordinates.forEach {
-            set(.piece(identifier: piece.identifier), at: $0)
+            set(.piece(identifier: piece.identifier, color: piece.color), at: $0)
         }
     }
 
     // MARK: - CustomStringConvertible
-    var description: String {
+    public var description: String {
         var result = ""
         for row in elements.indices {
             for col in elements[row].indices {

@@ -21,7 +21,6 @@ public struct Coordinate: Hashable, CustomStringConvertible {
 
     // MARK: - Properties
     public let x, y: Int
-
     public var row: Int { return y }
     public var col: Int { return x }
 
