@@ -43,12 +43,11 @@ public struct Board: Hashable, CustomStringConvertible {
             case .piece(let identifier, _): return String(identifier)
             }
         }
-        
-        @ViewBuilder
+
         public var body: some View {
                 switch self {
                 case .empty:
-                    if #available(iOS 17.0, *) {
+                    if #available(iOS 17.0, macOS 14.0, *) {
                         Rectangle()
                             .fill(.background.secondary)
                             .border(.black)

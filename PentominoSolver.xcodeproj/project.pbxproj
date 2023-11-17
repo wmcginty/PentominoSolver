@@ -7,11 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0EF4A875295914FA00FB59BA /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF4A874295914FA00FB59BA /* main.swift */; };
-		0EF4A87D295952DA00FB59BA /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 0EF4A87C295952DA00FB59BA /* Algorithms */; };
-		0EF4A88929596C6C00FB59BA /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = 0EF4A88829596C6C00FB59BA /* Collections */; };
-		B40503D32A6AF5BA002A4D82 /* PieceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40503D22A6AF5BA002A4D82 /* PieceView.swift */; };
-		B43C85CA2A69FABE002B2C92 /* Pentominos in Frameworks */ = {isa = PBXBuildFile; productRef = B43C85C92A69FABE002B2C92 /* Pentominos */; };
+		0E977B642B080951003F22BA /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E977B632B080951003F22BA /* main.swift */; };
+		0E977B692B080989003F22BA /* Pentominos in Frameworks */ = {isa = PBXBuildFile; productRef = 0E977B682B080989003F22BA /* Pentominos */; };
+		0EB25B262B07E42D007DE25A /* PiecesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB25B252B07E42D007DE25A /* PiecesView.swift */; };
 		B4448C602A69EC2F00FF92F5 /* SolverApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4448C5F2A69EC2F00FF92F5 /* SolverApp.swift */; };
 		B4448C622A69EC2F00FF92F5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4448C612A69EC2F00FF92F5 /* ContentView.swift */; };
 		B4448C642A69EC3100FF92F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4448C632A69EC3100FF92F5 /* Assets.xcassets */; };
@@ -21,7 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		0EF4A86F295914FA00FB59BA /* CopyFiles */ = {
+		0E977B5F2B080951003F22BA /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -33,9 +31,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0EF4A871295914FA00FB59BA /* PentominoSolver */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PentominoSolver; sourceTree = BUILT_PRODUCTS_DIR; };
-		0EF4A874295914FA00FB59BA /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		B40503D22A6AF5BA002A4D82 /* PieceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieceView.swift; sourceTree = "<group>"; };
+		0E977B612B080951003F22BA /* SyncSolver */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SyncSolver; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E977B632B080951003F22BA /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		0EB25B252B07E42D007DE25A /* PiecesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PiecesView.swift; sourceTree = "<group>"; };
 		B4448C5D2A69EC2F00FF92F5 /* Solver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Solver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4448C5F2A69EC2F00FF92F5 /* SolverApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolverApp.swift; sourceTree = "<group>"; };
 		B4448C612A69EC2F00FF92F5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -47,13 +45,11 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0EF4A86E295914FA00FB59BA /* Frameworks */ = {
+		0E977B5E2B080951003F22BA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0EF4A88929596C6C00FB59BA /* Collections in Frameworks */,
-				B43C85CA2A69FABE002B2C92 /* Pentominos in Frameworks */,
-				0EF4A87D295952DA00FB59BA /* Algorithms in Frameworks */,
+				0E977B692B080989003F22BA /* Pentominos in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +64,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E977B622B080951003F22BA /* SyncSolver */ = {
+			isa = PBXGroup;
+			children = (
+				0E977B632B080951003F22BA /* main.swift */,
+			);
+			path = SyncSolver;
+			sourceTree = "<group>";
+		};
 		0EF4A868295914FA00FB59BA = {
 			isa = PBXGroup;
 			children = (
 				B4448C6C2A69EC5600FF92F5 /* Pentominos */,
-				0EF4A873295914FA00FB59BA /* PentominoSolver */,
 				B4448C5E2A69EC2F00FF92F5 /* Solver */,
+				0E977B622B080951003F22BA /* SyncSolver */,
 				0EF4A872295914FA00FB59BA /* Products */,
 				0EF4A88729596C6C00FB59BA /* Frameworks */,
 			);
@@ -82,18 +86,10 @@
 		0EF4A872295914FA00FB59BA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0EF4A871295914FA00FB59BA /* PentominoSolver */,
 				B4448C5D2A69EC2F00FF92F5 /* Solver.app */,
+				0E977B612B080951003F22BA /* SyncSolver */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		0EF4A873295914FA00FB59BA /* PentominoSolver */ = {
-			isa = PBXGroup;
-			children = (
-				0EF4A874295914FA00FB59BA /* main.swift */,
-			);
-			path = PentominoSolver;
 			sourceTree = "<group>";
 		};
 		0EF4A88729596C6C00FB59BA /* Frameworks */ = {
@@ -108,7 +104,7 @@
 			children = (
 				B4448C5F2A69EC2F00FF92F5 /* SolverApp.swift */,
 				B4448C612A69EC2F00FF92F5 /* ContentView.swift */,
-				B40503D22A6AF5BA002A4D82 /* PieceView.swift */,
+				0EB25B252B07E42D007DE25A /* PiecesView.swift */,
 				B4448C6F2A69EDE500FF92F5 /* BoardView.swift */,
 				B4448C632A69EC3100FF92F5 /* Assets.xcassets */,
 				B4448C652A69EC3100FF92F5 /* Solver.entitlements */,
@@ -128,26 +124,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0EF4A870295914FA00FB59BA /* PentominoSolver */ = {
+		0E977B602B080951003F22BA /* SyncSolver */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0EF4A878295914FA00FB59BA /* Build configuration list for PBXNativeTarget "PentominoSolver" */;
+			buildConfigurationList = 0E977B652B080951003F22BA /* Build configuration list for PBXNativeTarget "SyncSolver" */;
 			buildPhases = (
-				0EF4A86D295914FA00FB59BA /* Sources */,
-				0EF4A86E295914FA00FB59BA /* Frameworks */,
-				0EF4A86F295914FA00FB59BA /* CopyFiles */,
+				0E977B5D2B080951003F22BA /* Sources */,
+				0E977B5E2B080951003F22BA /* Frameworks */,
+				0E977B5F2B080951003F22BA /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = PentominoSolver;
+			name = SyncSolver;
 			packageProductDependencies = (
-				0EF4A87C295952DA00FB59BA /* Algorithms */,
-				0EF4A88829596C6C00FB59BA /* Collections */,
-				B43C85C92A69FABE002B2C92 /* Pentominos */,
+				0E977B682B080989003F22BA /* Pentominos */,
 			);
-			productName = PentominoSolver;
-			productReference = 0EF4A871295914FA00FB59BA /* PentominoSolver */;
+			productName = SyncSolver;
+			productReference = 0E977B612B080951003F22BA /* SyncSolver */;
 			productType = "com.apple.product-type.tool";
 		};
 		B4448C5C2A69EC2F00FF92F5 /* Solver */ = {
@@ -177,11 +171,11 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1420;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
-					0EF4A870295914FA00FB59BA = {
-						CreatedOnToolsVersion = 14.2;
+					0E977B602B080951003F22BA = {
+						CreatedOnToolsVersion = 15.0.1;
 					};
 					B4448C5C2A69EC2F00FF92F5 = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -205,8 +199,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0EF4A870295914FA00FB59BA /* PentominoSolver */,
 				B4448C5C2A69EC2F00FF92F5 /* Solver */,
+				0E977B602B080951003F22BA /* SyncSolver */,
 			);
 		};
 /* End PBXProject section */
@@ -224,11 +218,11 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0EF4A86D295914FA00FB59BA /* Sources */ = {
+		0E977B5D2B080951003F22BA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0EF4A875295914FA00FB59BA /* main.swift in Sources */,
+				0E977B642B080951003F22BA /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,20 +230,46 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EB25B262B07E42D007DE25A /* PiecesView.swift in Sources */,
 				B4448C702A69EDE500FF92F5 /* BoardView.swift in Sources */,
 				B4448C622A69EC2F00FF92F5 /* ContentView.swift in Sources */,
 				B4448C602A69EC2F00FF92F5 /* SolverApp.swift in Sources */,
-				B40503D32A6AF5BA002A4D82 /* PieceView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		0E977B662B080951003F22BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		0E977B672B080951003F22BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		0EF4A876295914FA00FB59BA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -279,9 +299,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -310,6 +332,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -339,9 +362,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -359,25 +384,6 @@
 			};
 			name = Release;
 		};
-		0EF4A879295914FA00FB59BA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		0EF4A87A295914FA00FB59BA /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				GCC_OPTIMIZATION_LEVEL = fast;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
 		B4448C692A69EC3100FF92F5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -386,6 +392,7 @@
 				CODE_SIGN_ENTITLEMENTS = Solver/Solver.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Solver/Preview Content\"";
 				DEVELOPMENT_TEAM = 9W2C69WDZE;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -424,6 +431,7 @@
 				CODE_SIGN_ENTITLEMENTS = Solver/Solver.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Solver/Preview Content\"";
 				DEVELOPMENT_TEAM = 9W2C69WDZE;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -457,20 +465,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0E977B652B080951003F22BA /* Build configuration list for PBXNativeTarget "SyncSolver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E977B662B080951003F22BA /* Debug */,
+				0E977B672B080951003F22BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		0EF4A86C295914FA00FB59BA /* Build configuration list for PBXProject "PentominoSolver" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0EF4A876295914FA00FB59BA /* Debug */,
 				0EF4A877295914FA00FB59BA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		0EF4A878295914FA00FB59BA /* Build configuration list for PBXNativeTarget "PentominoSolver" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0EF4A879295914FA00FB59BA /* Debug */,
-				0EF4A87A295914FA00FB59BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -506,17 +514,7 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0EF4A87C295952DA00FB59BA /* Algorithms */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 0EF4A87B295952DA00FB59BA /* XCRemoteSwiftPackageReference "swift-algorithms" */;
-			productName = Algorithms;
-		};
-		0EF4A88829596C6C00FB59BA /* Collections */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 0EF4A88629596C4A00FB59BA /* XCRemoteSwiftPackageReference "swift-collections" */;
-			productName = Collections;
-		};
-		B43C85C92A69FABE002B2C92 /* Pentominos */ = {
+		0E977B682B080989003F22BA /* Pentominos */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Pentominos;
 		};

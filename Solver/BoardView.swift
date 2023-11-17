@@ -21,7 +21,6 @@ struct BoardView: View {
                         let coordinate = Coordinate(row: row, col: column)
                         let element = board.element(at: coordinate)
                         element
-
                     }
                 }
                 .aspectRatio(1, contentMode: .fit)
@@ -29,11 +28,3 @@ struct BoardView: View {
         }
     }
 }
-
-//#Preview {
-//    let board = Board(width: 8, height: 6)
-//    let solver = Solver()
-//    let solved = solver.solve(board: board, with: .smallGamePieces)!
-//    return BoardView(board: solved)
-//}
-

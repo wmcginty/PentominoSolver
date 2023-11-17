@@ -5,7 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "Pentominos",
-    platforms: [.iOS(.v16)],
+    platforms: [.macOS(.v13), .iOS(.v16)],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
@@ -14,8 +14,8 @@ let package = Package(
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
-        .package(url: "https://www.github.com/Apple/swift-collections.git", from: "1.0.0"),
-        .package(url: "https://www.github.com/Apple/swift-algorithms.git", from: "1.0.0")
+        .package(url: "https://www.github.com/apple/swift-collections.git", from: "1.0.0"),
+        .package(url: "https://www.github.com/apple/swift-algorithms.git", from: "1.0.0")
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
